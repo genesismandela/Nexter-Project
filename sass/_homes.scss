@@ -4,7 +4,7 @@
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 7rem;
+    grid-gap: 7rem; 
 }
 
 .home {
@@ -25,13 +25,20 @@
         grid-row: 1 / 2;
         grid-column: 2 / 3;
 
-        fill: $color-primary;
         height: 2rem;
         width: 2rem;
         z-index: 2;
         justify-self: end;
         margin: 1rem;
         cursor: pointer;
+    }
+
+    .disable {
+        fill: #fff;
+    }
+
+    .active {
+        fill: $color-primary;
     }
 
     &__name {

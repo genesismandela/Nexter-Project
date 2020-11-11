@@ -26,14 +26,20 @@
 </head>
 <body class="container">
     <div class="sidebar">
-        <button class="nav-btn"></button>
+        <button class="hamburger hamburger--minus" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </div>
 
-    <header class="header">
+    <header class="header" id="header">
         <img src="img/logo.png" alt="Logo" class="header__logo">
         <h3 class="heading-3">Your own home:</h3>
         <h1 class="heading-1">The ultimate personal freedom</h1>
+        <a href="#houses">
         <button class="btn header__btn">View owr properties</button>
+        </a>
         <div class="header__seenon-text">Seen on</div>
         <div class="header__seenon-logos">
             <img src="img/logo-bbc.png" alt="Seen on logo 1">
@@ -67,7 +73,7 @@
         
     </div>
     
-    <section class="features">
+    <section class="features" id="features">
         <div class="feature">
             <svg class="feature__icon">
                 <use xlink:href="img/sprite.svg#icon-global"></use>
@@ -120,18 +126,18 @@
         <img src="img/story-2.jpeg" alt="New house" class="story__img--2">
     </div>
 
-    <div class="story__content">
+    <div class="story__content" id="customers">
         <h3 class="heading-3 mb-sm">Happy Customers</h3>
         <h2 class="heading-2 heading-2--dark mb-md">&ldquo;The best decision in our lives&rdquo;</h2>
         <p class="story__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur voluptatibus. Quidem consequatur harum volupta!</p>
         <button class="btn">Find your own home</button>
     </div>
 
-        <section class="homes">
-            <!-- Home card 1-->
+    <section class="homes" id="houses">
+            <!-- Home card 1 -->
             <div class="home">
-                <img src="img/house-1.jpeg" alt="House 1" class="home__img">
-                <svg class="home__like">
+                <img src="img/house-1.jpeg" alt="House-1" class="home__img home__img--1">
+                <svg onclick="toggleColor(this, event)" class="home__like disable heart">
                     <use xlink:href="img/sprite.svg#icon-heart-full"></use>
                 </svg>
                 <h5 class="home__name">Beautiful Familiy House</h5>
@@ -159,13 +165,13 @@
                     </svg>
                     <p>$1,200,000</p>
                 </div>
-                <button class="btn home__btn">Contact realtor</button>
+                <button onclick="openFormModal()" class="btn home__btn home__btn-1">Contact realtor</button>
             </div>
 
             <!-- Home card 2-->
             <div class="home">
-                <img src="img/house-2.jpeg" alt="House 2" class="home__img">
-                <svg class="home__like">
+                <img src="img/house-2.jpeg" alt="House-2" class="home__img home__img--2">
+                <svg onclick="toggleColor(this, event)" class="home__like disable heart">
                     <use xlink:href="img/sprite.svg#icon-heart-full"></use>
                 </svg>
                 <h5 class="home__name">Modern Glass Villa</h5>
@@ -193,13 +199,13 @@
                     </svg>
                     <p>$2,750,000</p>
                 </div>
-                <button class="btn home__btn">Contact realtor</button>
+                <button onclick="openFormModal()" class="btn home__btn home__btn-2">Contact realtor</button>
             </div>
 
             <!-- Home card 3-->
             <div class="home">
-                <img src="img/house-3.jpeg" alt="House 3" class="home__img">
-                <svg class="home__like">
+                <img src="img/house-3.jpeg" alt="House-3" class="home__img home__img--3">
+                <svg onclick="toggleColor(this, event)" class="home__like disable heart">
                     <use xlink:href="img/sprite.svg#icon-heart-full"></use>
                 </svg>
                 <h5 class="home__name">Cozy Country House</h5>
@@ -227,13 +233,13 @@
                     </svg>
                     <p>$850,000</p>
                 </div>
-                <button class="btn home__btn">Contact realtor</button>
+                <button onclick="openFormModal()" class="btn home__btn home__btn-3">Contact realtor</button>
             </div>
 
             <!-- Home card 4-->
             <div class="home">
-                <img src="img/house-4.jpeg" alt="House 4" class="home__img">
-                <svg class="home__like">
+                <img src="img/house-4.jpeg" alt="House-4" class="home__img home__img--4">
+                <svg onclick="toggleColor(this, event)" class="home__like disable heart">
                     <use xlink:href="img/sprite.svg#icon-heart-full"></use>
                 </svg>
                 <h5 class="home__name">Large Rustical Villa</h5>
@@ -261,13 +267,13 @@
                     </svg>
                     <p>$1,950,000</p>
                 </div>
-                <button class="btn home__btn">Contact realtor</button>
+                <button onclick="openFormModal()" class="btn home__btn home__btn-4">Contact realtor</button>
             </div>
 
             <!-- Home card 5-->
             <div class="home">
-                <img src="img/house-5.jpeg" alt="House 5" class="home__img">
-                <svg class="home__like">
+                <img src="img/house-5.jpeg" alt="House-5" class="home__img home__img--5">
+                <svg onclick="toggleColor(this, event)" class="home__like disable heart">
                     <use xlink:href="img/sprite.svg#icon-heart-full"></use>
                 </svg>
                 <h5 class="home__name">Majestic Palace House</h5>
@@ -295,13 +301,13 @@
                     </svg>
                     <p>$9,500,000</p>
                 </div>
-                <button class="btn home__btn">Contact realtor</button>
+                <button onclick="openFormModal()" class="btn home__btn home__btn-5">Contact realtor</button>
             </div>
 
             <!-- Home card 6-->
             <div class="home">
-                <img src="img/house-6.jpeg" alt="House 6" class="home__img">
-                <svg class="home__like">
+                <img src="img/house-6.jpeg" alt="House-6" class="home__img home__img--6">
+                <svg onclick="toggleColor(this,event)" class="home__like disable heart">
                     <use xlink:href="img/sprite.svg#icon-heart-full"></use>
                 </svg>
                 <h5 class="home__name">Modern Familiy Apartment</h5>
@@ -329,11 +335,11 @@
                     </svg>
                     <p>$600,000</p>
                 </div>
-                <button class="btn home__btn">Contact realtor</button>
+                <button onclick="openFormModal()" class="btn home__btn home__btn-6">Contact realtor</button>
             </div>
     </section>
 
-    <section class="gallery">
+    <section class="gallery" id="gallery">
         <!-- figure.gallery__item.gallery__item--$*13>img[src=img/gal-$.jpeg][alt=Gallery-image].gallery__img -->
         <figure class="gallery__item gallery__item--1"><img src="img/gal-1.jpeg" alt="Gallery-image" class="gallery__img"></figure>
         <figure class="gallery__item gallery__item--2"><img src="img/gal-2.jpeg" alt="Gallery-image" class="gallery__img"></figure>
@@ -352,17 +358,137 @@
     </section>
 
     <footer class="footer">
-        <ul class="nav">
-            <li class="nav__item"><a href="#" class="nav__link">Find your dream home</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Request proposal</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Download home planner</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Contact us</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Sumbit your property</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Come work with us!</a></li>
+        <ul class="footer-nav">
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Find your dream home</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Request proposal</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Download home planner</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Contact us</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Sumbit your property</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Come work with us!</a></li>
         </ul>
         <p class="copyright">
-            &copy; Course and design created by Jonas Schmedtmann and project made by Mandela Samboy
+            &copy; Project and functionallity made by Mandela Samboy <br>
+            Designed by <a href="https://codingheroes.io" target="_blank">Jonas Schmedtmann.</a>
         </p>
     </footer>
+
+    <nav class="navigation nav-hidden">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#header" class="navigation__link">Home</a></li>
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#features" class="navigation__link">Features</a></li>
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#customers" class="navigation__link">Customers</a></li>
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#houses" class="navigation__link">Houses</a></li>
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#gallery" class="navigation__link">Gallery</a></li>  
+        </ul>
+    </nav>
+
+    <!-- MODAL -- Contact Realtor Form -->
+    <div class="contact-modal contact-modal__hidden">
+        <div onclick="closeModal()" class="contact-modal__overlay"></div>
+        <div class="contact-panel">
+            
+            <form action="" class="contact-panel__form">
+                <h2 class="contact-panel__form__heading">Beautiful Family House</h2>
+
+                <h3 class="contact-panel__form__heading-3">Personal information</h3>
+                
+                <div class="contact-panel__form__container">
+                    <label for="" class="contact-panel__form__label">Name</label>
+                    <input type="text" class="contact-panel__form__input" >
+                </div>                
+                
+
+                <div class="contact-panel__form__container">
+                    <label for="" class="contact-panel__form__label">Surname</label>
+                    <input type="text" class="contact-panel__form__input" >
+                </div>
+
+                <h3 class="contact-panel__form__heading-3">Contact information</h3>
+
+                <div class="contact-panel__form__container">
+                    <label for="" class="contact-panel__form__label">Phone number</label>
+                    <input type="text" class="contact-panel__form__input">
+                </div>
+
+                <div class="contact-panel__form__container">
+                    <label for="" class="contact-panel__form__label">Email</label>
+                    <input type="email" class="contact-panel__form__input">
+                </div>
+                <div class="contact-panel__form__conditions">
+                    <input type="checkbox" name="terms" id="terms">
+                    <label for="terms">I agree with terms, conditions, and private policy</label>
+                </div>
+                <input type="submit" class="btn contact-panel__form__submit" value="ENQUIRY NOW">
+            </form>
+        </div>
+        <div onclick="closeModal()" class="contact-modal__close"></div>
+    </div>
+
+    <!-- MODAL -- Gallery -->
+    <div class="modal-gallery modal-gallery__hidden">
+        <div class="modal-gallery__container">
+                <img src="img/gal-1.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-1">
+            
+            
+                <img src="img/gal-2.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-2">
+            
+            
+                <img src="img/gal-3.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-3">
+            
+            
+                <img src="img/gal-4.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-4">
+            
+            
+                <img src="img/gal-5.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-5">
+            
+            
+                <img src="img/gal-6.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-6">
+            
+            
+                <img src="img/gal-7.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-7">
+            
+            
+                <img src="img/gal-8.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-8">
+            
+            
+                <img src="img/gal-9.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-9">
+            
+            
+                <img src="img/gal-10.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-10">
+            
+            
+                <img src="img/gal-11.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-11">
+            
+            
+                <img src="img/gal-12.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-12">
+            
+            
+                <img src="img/gal-13.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-13">
+            
+            
+                <img src="img/gal-14.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-14">
+            
+        </div>
+        <div class="modal-gallery__arrow"><p class="modal-gallery__arrow__back">&larr;</p></div>
+            <div class="modal-gallery__arrow"><p class="modal-gallery__arrow__next">&rarr;</p></div>
+        <div class="modal-gallery__row-container">
+            <img src="img/gal-1.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-2.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-3.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-4.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-5.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-6.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-7.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-8.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-9.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-10.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-11.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-12.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-13.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+            <img src="img/gal-14.jpeg" alt="Gallery-image" class="modal-gallery__row-container__img">
+        </div>
+        <div class="modal-gallery__close"></div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>

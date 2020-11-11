@@ -1,8 +1,7 @@
 .sidebar {
-    background-color: $color-primary;
+    background: linear-gradient(5deg, $color-secondary, $color-primary);
     grid-column: sidebar-start / sidebar-end;
     grid-row: 1 / -1;
-
     display: flex;
     justify-content: center;
 
@@ -14,33 +13,181 @@
     }
 }
 
-.nav-btn {
-    border: none;
-    border-radius: 0;
+// Hamburger
+// ==================================================
+.hamburger {
+    cursor: pointer;
+    position: fixed;
+    top: 3rem;
+  
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+  
+    // Normalize (<button>)
+    color: $color-secondary;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
 
-    background-color: #fff;
-    height: 2px;
-    width: 4.5rem;
-    margin-top: 4rem;
-
-    &::before, 
-    &::after {
-        background-color: #fff;
-        height: 2px;
-        width: 4.5rem;
-        content: "";
-        display: block;
-    }
-
-    &::before {transform: translateY(-1.5rem);}
-    &::after {transform: translateY(1.3rem);}
+    overflow: visible;
+    z-index: 9500;
 
     @media only screen and (max-width: $bp-large) {
-        margin-top: 0;
-        margin-right: 3rem;
-
-        &::before {transform: translateY(-1.2rem);}
-        &::after {transform: translateY(1rem);}
-
+        right: 3rem;
+        color: $color-primary;
     }
-}
+  
+    &:hover {
+      @if $hamburger-hover-use-filter == true {
+        filter: $hamburger-hover-filter;
+      }
+      @else {
+        opacity: $hamburger-hover-opacity;
+      }
+    }
+  
+    &.is-active {
+      &:hover {
+        @if $hamburger-hover-use-filter == true {
+          filter: $hamburger-active-hover-filter;
+        }
+        @else {
+          opacity: $hamburger-active-hover-opacity;
+        }
+      }
+  
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: $color-primary;
+
+        @media only screen and (max-width: $bp-large) {
+            background-color: $color-primary;
+        }
+      }
+    }
+  }
+  
+  .hamburger-box {
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: $hamburger-layer-height / -2;
+  
+    &,
+    &::before,
+    &::after {
+      width: $hamburger-layer-width;
+      height: $hamburger-layer-height;
+      background-color: $color-secondary;
+      border-radius: $hamburger-layer-border-radius;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+
+      @media only screen and (max-width: $bp-large) {
+        background-color: $color-primary;
+    }
+    }
+  
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+    }
+  
+    &::before {
+      top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    }
+  
+    &::after {
+      bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+    }
+  }
+
+  @if index($hamburger-types, minus) {
+    /*
+     * Minus
+     */
+    .hamburger--minus {
+      .hamburger-inner {
+        &::before,
+        &::after {
+          transition: bottom 0.08s 0s ease-out,
+                      top 0.08s 0s ease-out,
+                      opacity 0s linear;
+        }
+      }
+  
+      &.is-active {
+        .hamburger-inner {
+          &::before,
+          &::after {
+            opacity: 0;
+            transition: bottom 0.08s ease-out,
+                        top 0.08s ease-out,
+                        opacity 0s 0.08s linear;
+          }
+          &::before {
+            top: 0;
+          }
+  
+          &::after {
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  
+
+// .nav-btn {
+//     border: none;
+//     border-radius: 0;
+
+//     background-color: #fff;
+//     height: 2px;
+//     width: 4.5rem;
+//     margin-top: 4rem;
+
+//     position: fixed;
+//     z-index: 50;
+
+//     &::before, 
+//     &::after {
+//         background-color: #fff;
+//         height: 2px;
+//         width: 4.5rem;
+//         content: "";
+//         display: block;
+//     }
+
+//     &::before {transform: translateY(-1.5rem);}
+//     &::after {transform: translateY(1.3rem);}
+    
+//     @media only screen and (max-width: $bp-large) {
+//         position: absolute;
+//         right: 4rem;
+//         top: 2rem;
+//         background-color: $color-primary;
+
+
+//         &::before {
+//             transform: translateY(-1.2rem); 
+//             background-color: $color-primary; 
+//             margin-right: 4rem;}
+//         &::after {
+//             transform: translateY(1rem); 
+//             background-color: $color-primary;
+//             margin-right: 4rem;
+//         }
+//     }
+// }

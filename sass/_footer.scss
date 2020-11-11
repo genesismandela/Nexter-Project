@@ -4,12 +4,18 @@
     padding: 8rem;
 }
 
-.nav {
+.footer-nav {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    grid-gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    justify-items: center;
+
+    &__item {
+        width: 15rem;
+    }
+
 
     &__link:link,
     &__link:visited {
@@ -35,4 +41,7 @@
     color: $color-grey-light-2;
     margin-top: 6rem;
     text-align: center;
+
+    a {color: $color-grey-light-2;}
+    br {margin-bottom: 2rem;}
 }
