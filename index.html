@@ -4,10 +4,10 @@
   <!-- Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FreeCodeCamp challenge to improve HTML, CSS, SASS and Javascript skills">
+  <meta name="description" content="Webpage created with HTML, CSS using the pre-processor SASS and Javascript, to improve web developer skills">
   <meta name="author" content="Genesis Mandela">
   <!-- Title -->
-  <title>Genesis Mandela | Nexter Project</title>
+  <title>Nexter Project</title>
   <!-- Style -->
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -25,6 +25,7 @@
   </script>
 </head>
 <body class="container">
+    <!-- Sidebar which include an hamburger to make the navigation menu open and close when is clicked -->
     <div class="sidebar">
         <button class="hamburger hamburger--minus" type="button">
             <span class="hamburger-box">
@@ -32,7 +33,19 @@
             </span>
         </button>
     </div>
+    <!-- The hidden navigation menu that is open when hamburger is clicked -->
+    <nav class="navigation nav-hidden">
+        <div onclick="closeNavMenu()" class="navigation__overlay"></div>
+        <ul class="navigation__list">
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#header" class="navigation__link">Home</a></li>
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#features" class="navigation__link">Features</a></li>
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#customers" class="navigation__link">Customers</a></li>
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#houses" class="navigation__link">Houses</a></li>
+            <li class="navigation__item"><a onclick="closeNavMenu()" href="#gallery" class="navigation__link">Gallery</a></li>  
+        </ul>
+    </nav>
 
+    <!-- Header section chich includes the header and the realtors columns -->
     <header class="header" id="header">
         <img src="img/logo.png" alt="Logo" class="header__logo">
         <h3 class="heading-3">Your own home:</h3>
@@ -72,7 +85,8 @@
         </div>
         
     </div>
-    
+
+    <!-- Features section -->
     <section class="features" id="features">
         <div class="feature">
             <svg class="feature__icon">
@@ -121,6 +135,7 @@
 
     </section>
 
+    <!-- Story section that includes few pictures and customers review -->
     <div class="story__pictures">
         <img src="img/story-1.jpeg" alt="Couple with new house" class="story__img--1">
         <img src="img/story-2.jpeg" alt="New house" class="story__img--2">
@@ -133,6 +148,7 @@
         <button class="btn">Find your own home</button>
     </div>
 
+    <!-- Homes section which includes the houses available with some features and the button to open the contact modal form -->
     <section class="homes" id="houses">
             <!-- Home card 1 -->
             <div class="home">
@@ -338,7 +354,62 @@
                 <button onclick="openFormModal()" class="btn home__btn home__btn-6">Contact realtor</button>
             </div>
     </section>
+    <!-- MODAL -- Contact Realtor Form -->
+    <div class="contact-modal contact-modal__hidden">
+        <div onclick="closeModal()" class="contact-modal__overlay"></div>
+        <div class="contact-panel">
+                
+            <form action="" class="contact-panel__form">
+                <h2 class="contact-panel__form__heading">Contact our best realtors to get information about your dreams house</h2>
+    
+                <h3 class="contact-panel__form__heading-3">Personal information</h3>
+                    
+                <div class="contact-panel__form__container">
+                    <label for="" class="contact-panel__form__label">Name</label>
+                    <input type="text" class="contact-panel__form__input">
+                </div>                
+                    
+    
+                <div class="contact-panel__form__container">
+                    <label for="" class="contact-panel__form__label">Surname</label>
+                    <input type="text" class="contact-panel__form__input">
+                </div>
+    
+                <h3 class="contact-panel__form__heading-3">Contact information</h3>
+    
+                <div class="contact-panel__form__container">
+                    <label for="" class="contact-panel__form__label">Phone number</label>
+                    <input type="text" class="contact-panel__form__input">
+                </div>
+    
+                <div class="contact-panel__form__container">
+                    <label for="" class="contact-panel__form__label">Email</label>
+                    <input type="email" class="contact-panel__form__input">
+                </div>
+    
+                <div class="contact-panel__form__container">
+                    <h3 class="contact-panel__form__heading-3">Your next house</h3>
+                    <select name="dropdown" id="dropdown">
+                        <option value="beautiful-family-house">Beautiful Familiy House</option>
+                        <option value="modern-glass-villa">Modern Glass Villa</option>
+                        <option value="cozy-country-house">Cozy Country House</option>
+                        <option value="rustical-villa">Large Rustical Villa</option>
+                        <option value="majestic-palace">Majestic Palace House</option>
+                        <option value="family-apartment">Modern Family Apartment</option>
+                    </select>
+                </div>
+    
+                <div class="contact-panel__form__conditions">
+                    <input type="checkbox" name="terms" id="terms" class="pointer">
+                    <label for="terms" class="pointer">I agree with terms, conditions, and private policy</label>
+                </div>
+                <input type="submit" class="btn contact-panel__form__submit" value="ENQUIRY NOW">
+                <div onclick="closeModal()" class="contact-modal__close"></div>
+            </form>
+        </div>
+    </div>
 
+    <!-- The gallery panel with a styled grid that opens a gallery modal when clicking on it -->
     <section class="gallery" id="gallery">
         <!-- figure.gallery__item.gallery__item--$*13>img[src=img/gal-$.jpeg][alt=Gallery-image].gallery__img -->
         <figure class="gallery__item gallery__item--1"><img src="img/gal-1.jpeg" alt="Gallery-image" class="gallery__img"></figure>
@@ -356,116 +427,22 @@
         <figure class="gallery__item gallery__item--13"><img src="img/gal-13.jpeg" alt="Gallery-image" class="gallery__img"></figure>
         <figure class="gallery__item gallery__item--14"><img src="img/gal-14.jpeg" alt="Gallery-image" class="gallery__img"></figure>
     </section>
-
-    <footer class="footer">
-        <ul class="footer-nav">
-            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Find your dream home</a></li>
-            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Request proposal</a></li>
-            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Download home planner</a></li>
-            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Contact us</a></li>
-            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Sumbit your property</a></li>
-            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Come work with us!</a></li>
-        </ul>
-        <p class="copyright">
-            &copy; Project and functionallity made by Mandela Samboy <br>
-            Designed by <a href="https://codingheroes.io" target="_blank">Jonas Schmedtmann.</a>
-        </p>
-    </footer>
-
-    <nav class="navigation nav-hidden">
-        <ul class="navigation__list">
-            <li class="navigation__item"><a onclick="closeNavMenu()" href="#header" class="navigation__link">Home</a></li>
-            <li class="navigation__item"><a onclick="closeNavMenu()" href="#features" class="navigation__link">Features</a></li>
-            <li class="navigation__item"><a onclick="closeNavMenu()" href="#customers" class="navigation__link">Customers</a></li>
-            <li class="navigation__item"><a onclick="closeNavMenu()" href="#houses" class="navigation__link">Houses</a></li>
-            <li class="navigation__item"><a onclick="closeNavMenu()" href="#gallery" class="navigation__link">Gallery</a></li>  
-        </ul>
-    </nav>
-
-    <!-- MODAL -- Contact Realtor Form -->
-    <div class="contact-modal contact-modal__hidden">
-        <div onclick="closeModal()" class="contact-modal__overlay"></div>
-        <div class="contact-panel">
-            
-            <form action="" class="contact-panel__form">
-                <h2 class="contact-panel__form__heading">Beautiful Family House</h2>
-
-                <h3 class="contact-panel__form__heading-3">Personal information</h3>
-                
-                <div class="contact-panel__form__container">
-                    <label for="" class="contact-panel__form__label">Name</label>
-                    <input type="text" class="contact-panel__form__input" >
-                </div>                
-                
-
-                <div class="contact-panel__form__container">
-                    <label for="" class="contact-panel__form__label">Surname</label>
-                    <input type="text" class="contact-panel__form__input" >
-                </div>
-
-                <h3 class="contact-panel__form__heading-3">Contact information</h3>
-
-                <div class="contact-panel__form__container">
-                    <label for="" class="contact-panel__form__label">Phone number</label>
-                    <input type="text" class="contact-panel__form__input">
-                </div>
-
-                <div class="contact-panel__form__container">
-                    <label for="" class="contact-panel__form__label">Email</label>
-                    <input type="email" class="contact-panel__form__input">
-                </div>
-                <div class="contact-panel__form__conditions">
-                    <input type="checkbox" name="terms" id="terms">
-                    <label for="terms">I agree with terms, conditions, and private policy</label>
-                </div>
-                <input type="submit" class="btn contact-panel__form__submit" value="ENQUIRY NOW">
-            </form>
-        </div>
-        <div onclick="closeModal()" class="contact-modal__close"></div>
-    </div>
-
     <!-- MODAL -- Gallery -->
     <div class="modal-gallery modal-gallery__hidden">
         <div class="modal-gallery__container">
                 <img src="img/gal-1.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-1">
-            
-            
-                <img src="img/gal-2.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-2">
-            
-            
-                <img src="img/gal-3.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-3">
-            
-            
+                <img src="img/gal-2.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-2">      
+                <img src="img/gal-3.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-3">        
                 <img src="img/gal-4.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-4">
-            
-            
-                <img src="img/gal-5.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-5">
-            
-            
-                <img src="img/gal-6.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-6">
-            
-            
-                <img src="img/gal-7.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-7">
-            
-            
-                <img src="img/gal-8.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-8">
-            
-            
-                <img src="img/gal-9.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-9">
-            
-            
-                <img src="img/gal-10.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-10">
-            
-            
-                <img src="img/gal-11.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-11">
-            
-            
+                <img src="img/gal-5.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-5">     
+                <img src="img/gal-6.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-6">       
+                <img src="img/gal-7.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-7">         
+                <img src="img/gal-8.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-8">         
+                <img src="img/gal-9.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-9">     
+                <img src="img/gal-10.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-10">          
+                <img src="img/gal-11.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-11">         
                 <img src="img/gal-12.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-12">
-            
-            
                 <img src="img/gal-13.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-13">
-            
-            
                 <img src="img/gal-14.jpeg" alt="Gallery-image" class="modal-gallery__container__img image-slider-14">
             
         </div>
@@ -489,6 +466,22 @@
         </div>
         <div class="modal-gallery__close"></div>
     </div>
+
+    <footer class="footer">
+        <ul class="footer-nav">
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Find your dream home</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Request proposal</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Download home planner</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Contact us</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Sumbit your property</a></li>
+            <li class="footer-nav__item"><a href="#" class="footer-nav__link">Come work with us!</a></li>
+        </ul>
+        <p class="copyright">
+            &copy; Project and functionallity made by Mandela Samboy <br>
+            Designed by <a href="https://codingheroes.io" target="_blank">Jonas Schmedtmann.</a>
+        </p>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>

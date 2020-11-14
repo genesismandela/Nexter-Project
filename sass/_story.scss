@@ -11,6 +11,8 @@
         grid-template-columns: repeat(6, 1fr);
         align-items: center;
 
+        animation: showUp 1s ease 1;
+
         @media only screen and (max-width: $bp-medium) {
             grid-column: 1 / -1;
             padding: 6rem;
@@ -22,6 +24,8 @@
         grid-row: 2 / 6;
         grid-column: 2 / 6;
         box-shadow: 0 2rem 5rem rgba(#000, .1);
+
+        animation: showLeft 1.5s ease-in 1s backwards;
 
         @media only screen and (max-width: $bp-medium) {
             grid-column: 1 / 5;
@@ -36,6 +40,9 @@
         z-index: 30;
 
         box-shadow: 0 2rem 5rem rgba(#000, .2);
+
+        animation: showButton 1.5s ease-in 1.5s backwards;
+
 
         @media only screen and (max-width: $bp-medium) {
             grid-row: 1 / -1;
@@ -73,4 +80,29 @@
         font-style: italic;
         margin-bottom: 4rem;
     }
+}
+
+@keyframes showUp {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showLeft {
+    0% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+}
+
+@keyframes showButton {
+    0% {
+        transform: translateY(70%);
+        opacity: 0;
+    }
+
 }

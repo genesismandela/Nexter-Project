@@ -2,15 +2,18 @@
 // ========== MODAL GALLERY ========== //
 const galleryModal = document.querySelector('.modal-gallery'); // Variable with the Gallery Modal Container
 const galleryClose = document.querySelector('.modal-gallery__close'); // Variable with the button to close the Gallery
+const gallery = document.querySelector('.gallery'); // Variable with the gallery pictures on the main page
 
+// Make the Modal Gallery open when any picture on gallery is clicked
+gallery.addEventListener('click', function() {
+    galleryModal.classList.remove('modal-gallery__hidden');
+})
 
-// galleryClose.addEventListener('click', function() {
-//     galleryModal.classList.add('modal-gallery__hidden');
-// })
+// Make the Modal Gallery close when close button on modal gallery is clicked
+galleryClose.addEventListener('click', function() {
+    galleryModal.classList.add('modal-gallery__hidden');
+})
 
-// gallerySlides.addEventListener('click', function() {
-//     galleryModal.classList.remove('modal-gallery__hidden');
-// })
 
 const gallerySlider = document.querySelector('.modal-gallery__container'); // Variable with the Image Slider
 const gallerySlides = document.querySelectorAll('.modal-gallery__container__img'); // Variable with the Images Slides
@@ -21,30 +24,48 @@ const arrowRight = document.querySelector('.modal-gallery__arrow__next'); // Var
 let currentSlide = 0; // Set the current or active image to 0 to navigate between images later on
 const maxSlide = gallerySlides.length; // Set the length of the Images
 
+// Function that styles the gallery, translating all pictures in a row
+const goToSlide =  function (slide) {
+    gallerySlides.forEach(
+        (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%`));
+}   
+goToSlide(0);
 
-
-gallerySlides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%`));
-
-arrowRight.addEventListener('click', function() {
+// Function to make the Right Arrow work to slide between images
+const nextSlide = function() {
     if (currentSlide === maxSlide - 1) {
         currentSlide = 0;
     } else {
         currentSlide++;
     }
+    goToSlide(currentSlide);
+}
 
-    gallerySlides.forEach(
-        (s, i) => (s.style.transform = `translateX(${100 * (i - currentSlide)}%)`)
-    );
-});
-
-arrowLeft.addEventListener('click', function() {
+// Function to make the Left Arrow work to slide between images
+const prevSlide = function() {
     if (currentSlide === 0) {
         currentSlide = maxSlide -1;
     } else {
         currentSlide--;
     }
+    goToSlide(currentSlide);
+}
 
-    gallerySlides.forEach((s, i) => (s.style.transform = `translateX(${100 * (i - currentSlide)}%`));
+arrowRight.addEventListener('click', nextSlide);
+arrowLeft.addEventListener('click', prevSlide);
+
+// Make the keywords Arrow Left and Right work to slide between images and the Escape to close the modal
+document.addEventListener('keydown', function(e) {
+    if(e.key === 'ArrowLeft') {
+        prevSlide();
+    } else if (e.key === 'ArrowRight') {
+        nextSlide();
+    }
+
+    if (e.key === 'Escape') {
+        galleryModal.classList.add('modal-gallery__hidden');
+    }
+
 });
 
 
@@ -62,7 +83,6 @@ const navLink = document.querySelectorAll('.navigation__link'); // Variable for 
         console.log('Navigation show-hide');
     }; // Call the OpenNavMenu function when Hamburger is clicked
     btnBurger.addEventListener('click', openNavMenu); 
-    
 
     // Function to close Navigation Menu when links inside are clicked
     function closeNavMenu() {
@@ -124,3 +144,4 @@ const toggleHeart = document.querySelectorAll('.heart'); // Variable with all SV
         toggleHeart.classList.toggle('disable');
         toggleHeart.classList.toggle('active');
     };
+

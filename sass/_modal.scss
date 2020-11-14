@@ -4,7 +4,7 @@
     overflow-y: hidden;
     width: 100%;  
     position: fixed;
-    z-index: 5000;
+    z-index: 9000;
 
     &__overlay {
         position: absolute;
@@ -12,14 +12,15 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba($color-secondary, 0.9);
+        background-color: rgba($color-secondary, 0.5);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
-        z-index: 7000;
+        z-index: 9250;
         cursor: pointer;
 
+
         @-moz-document url-prefix() {
-            background-color: rgba($color-secondary, 1);
+            background-color: rgba($color-secondary, .8);
         }
 
     }
@@ -35,9 +36,12 @@
         transform: translate(-50%, -50%);
         overflow-y: scroll;
 
-        padding: 3rem 0;
-        z-index: 8000;
+        padding: 7.5rem 0;
+        z-index: 9500;
 
+        border-radius: 13px;
+
+        background-color: rgba($color-secondary, 0.9);
 
         &__form {
             display: flex;
@@ -50,7 +54,7 @@
                 background-color: $color-primary;
                 text-align: center;
                 margin: 0 auto 1rem auto;
-                padding: 1rem 0;
+                padding: 1rem;
 
                 @media only screen and (max-width: $bp-medium) {
                     font-size: 2.2rem;
@@ -103,17 +107,38 @@
                     font-size: 1.5rem;
                 }
             }
+
+            #dropdown {
+                width: 100%;
+                max-width: 750px;
+                font-size: 1.6rem;
+                padding: 1rem 0;
+
+                option {
+                    font-size: 2rem;
+
+                    @media only screen and (max-width: $bp-medium) {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
     
             &__conditions {
                 margin: 0 auto;
                 margin-top: 0.5rem;
+                padding: 1rem 0;
                 width: 60%;
     
+                cursor: pointer;
+
                 label {
                     color: $color-grey-light-1;
                     margin-left: .5rem;
+                    cursor: pointer;
                 }
             }
+
+
     
             &__submit { 
                 display: inline-block;
@@ -129,10 +154,14 @@
         right: 3rem;
         background-color: $color-primary;
         cursor: pointer;
-        z-index: 8000;
+        z-index: 9250;
         width: $hamburger-layer-width;
         height: $hamburger-layer-height;
         border-radius: $hamburger-layer-border-radius;
+
+        &:hover {
+            background-color: rgba($color-primary, .5);
+        }
     }
 
     &__hidden {
@@ -153,7 +182,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 5rem;
+
 
     &__container {
         position: absolute;
@@ -201,8 +230,8 @@
         color: $color-primary;
         cursor: pointer;
 
-        @media only screen and (max-width: 950px) {
-            display: none;
+        @media only screen and (max-width: 650px) {
+            font-size: 3rem;
         }
 
         &__next {
@@ -230,6 +259,10 @@
         width: $hamburger-layer-width;
         height: $hamburger-layer-height;
         border-radius: $hamburger-layer-border-radius;
+
+        &:hover {
+            background-color: rgba($color-primary, .5);
+        }
     }
 }
 
