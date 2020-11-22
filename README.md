@@ -2,7 +2,7 @@
 
 // HEY! I am Genesis Mandela and I am a self taught developer and designer, currently located in Dublin, wanting to improve my tech skills to the next level.
 
-// This is the prject Nexter, website created with the CSS preprocessor SASS using the latest Grid and Flex features, and where I also apply some Javascript functionallity.
+// This is the project Nexter, website created with the CSS preprocessor SASS using the latest Grid and Flex features, and where I also apply some Javascript functionallity.
 
 ==== PROJECT DESCRIPTION 🖥️ ====
 
