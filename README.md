@@ -32,4 +32,4 @@ To be one of the first webpages where I use JS I am quite happy about the result
 
 --> Link to the Landing page;
  
-https://genesismandela.github.io/Nexter-Project/
+https://genesismandela.github.io/nexter/index.html
