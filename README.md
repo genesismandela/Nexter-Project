@@ -2,11 +2,11 @@
 
 // HEY! I am Genesis Mandela and I am a self taught developer and designer, currently located in Dublin, wanting to improve my tech skills to the next level.
 
-// This is the project Nexter, website created with the CSS preprocessor SASS using the latest Grid and Flex features, and where I also apply some Javascript functionallity.
+// This is the project Nexter, website created with the CSS preprocessor SASS using the latest Grid and Flex features, and where I also apply some Javascript functionality.
 
 ==== PROJECT DESCRIPTION 🖥️ ====
 
-This project has been created following an Udemy CSS and SASS course where the Grid property is covered from start to end.
+The project design has been created following and Udemy CSS and SASS course where the Grid property is covered from start to end. All functionality and interactive components have been created by me using Javascript.
 
 Udemy Course created by Jonas Schmedtmann.
 
