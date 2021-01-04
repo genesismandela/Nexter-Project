@@ -8,6 +8,10 @@
 
 This project has been created following an Udemy CSS and SASS course where the Grid property is covered from start to end.
 
+Udemy Course created by Jonas Schmedtmann.
+
+https://www.udemy.com/course/advanced-css-and-sass/
+
 --> My personal review;
 
 In this project for the first time I had the oportunity to start using the command line to install node and use npm features. As well as node-sass package and configuration to make SASS work properly.
